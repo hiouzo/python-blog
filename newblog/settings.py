@@ -66,6 +66,7 @@ TEMPLATES = [
                 'django.template.context_processors.request',
                 'django.contrib.auth.context_processors.auth',
                 'django.contrib.messages.context_processors.messages',
+                'blogs.views.global_setting'
             ],
         },
     },
@@ -106,10 +107,15 @@ STATIC_URL = '/static/'
 
 STATICFILES_DIRS = (os.path.join(BASE_DIR, 'static'),)
 
+#自定义用户model
+AUTH_USER_MODEL = 'blog.User'
+
 
 #网站基本信息配置
 SITE_NAME ='ouzo的博客'
 SITE_BESC ='个人博客'
+PRO_RSS = ''
+PRO_EMAIL = 'ouzo@hiouzo.cn'
 
 
 # 自定义日志输出信息

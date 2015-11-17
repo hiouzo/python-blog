@@ -89,6 +89,7 @@ DATABASES = {
 # Internationalization
 # https://docs.djangoproject.com/en/1.8/topics/i18n/
 
+#改变后台语言设置,默认为us-EN
 LANGUAGE_CODE = 'zh-CN'
 
 TIME_ZONE = 'UTC'
@@ -108,7 +109,7 @@ STATIC_URL = '/static/'
 STATICFILES_DIRS = (os.path.join(BASE_DIR, 'static'),)
 
 #自定义用户model
-AUTH_USER_MODEL = 'blog.User'
+AUTH_USER_MODEL = 'blogs.User'
 
 
 #网站基本信息配置

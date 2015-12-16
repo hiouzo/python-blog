@@ -8,10 +8,11 @@ from django.utils.translation import ugettext, ugettext_lazy as _			#继承原�
 # Register your models here.
 
 class ArticleAdmin(admin.ModelAdmin):
-	# #页面内容需要显示的参数.exclude是不显示的参数列举
-	# fields = ('title','desc','content','user')
-	list_display = ('title','user','date_publish')
+	#list_display 是列参数的配置, 列表参数配置
+	list_display = ('title','user','date_publish','is_recommend')
 
+	# #页面内容需要显示的参数.exclude 是不显示的参数列举
+	# fields = ('title','desc','content','user')
 	#fieldsets 是管理集合, 一部分信息显示在一个主要区域, 另外一部分信息隐藏在扩展里
 	fieldsets = (
 		(None, {

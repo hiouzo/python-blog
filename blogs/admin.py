@@ -25,6 +25,14 @@ class ArticleAdmin(admin.ModelAdmin):
 		}),
 	)
 
+	#引入富文本媒体编辑器
+	class Media:
+		js = (
+			'/static/js/kindeditor-4.1.10/kindeditor-min.js',
+			'/static/js/kindeditor-4.1.10/lang/zh_CN.js',
+			'/static/js/kindeditor-4.1.10/config.js',
+		)
+
 
 #继承原有admin中对用户管理类
 class UserProfileAdmin(UserAdmin):
@@ -55,6 +63,9 @@ AUTH_USER_MODEL = 'blogs.User'
 所以我们的密码在新建的时候是明文密码, 没有经过django的用户类处理过, 所以我们为了对密码或者一些信息加密
 要把admin的类引用回来
 '''
+
+
+
 
 admin.site.register(User, UserProfileAdmin)			#定义UserProfileAdmin,对密码以及注册用户参数进行控制
 admin.site.register(Tag)

@@ -11,14 +11,14 @@
 <script type="text/javascript" src='{% static 'js/jquery.min.js' %}'></script>
 <script type="text/javascript" src='{% static 'js/sliders.js' %}'></script>
 <!--[if lt IE 9]>
-<script src="js/modernizr.js"></script>
+<script src='{% static 'js/modernizr.js' %}'></script>
 <![endif]-->
 </head>
 <body>
 <header>
   <div class="logo">
       <h1>{{ SITE_NAME }}</h1>
-      <p>{{ SITE_BESC }}</p>
+      <p>{{ SITE_BESC }} {{ PRO_EMAIL }}</p>
   </div>
   <nav id="topnav" class="f_r">
     <ul>

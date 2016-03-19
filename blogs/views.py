@@ -21,4 +21,10 @@ def index(request):
     return render(request,'index.html',locals())
 
 def login(request):
-    return HttpResponse('hello')
+    return render(request,'login.html',locals())
+
+def failure(request):
+    return render(request,'failure.html',locals())
+
+def article(request):
+    return render(request,'article.html',locals())

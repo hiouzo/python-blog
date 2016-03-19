@@ -1,3 +1,4 @@
+{% load staticfiles %}
 <!DOCTYPE html>
 <html lang="zh-cn">
 <head>
@@ -8,8 +9,8 @@
     <meta name="description" content="">
     <meta name="author" content="">
     <title>操作失败</title>
-    <link href="http://www.maiziedu.com/static/css/base.css" rel="stylesheet">
-    <link href="http://www.maiziedu.com/static/css/microoh-v5.css" rel="stylesheet">
+    <link href='{% static 'http://www.maiziedu.com/static/css/base.css' %}' rel="stylesheet">
+    <link href='{% static 'http://www.maiziedu.com/static/css/microoh-v5.css' %}' rel="stylesheet">
 </head>
 
 <body>

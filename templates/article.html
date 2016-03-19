@@ -1,3 +1,4 @@
+{% load static %}
 <!doctype html>
 <html>
 <head>
@@ -5,12 +6,12 @@
 <title>某某某的个人博客</title>
 <meta name="keywords" content="" />
 <meta name="description" content="" />
-<link href='css/base.css' rel="stylesheet">
-<link href='css/index.css' rel="stylesheet">
-<script type="text/javascript" src='js/jquery.min.js'></script>
-<script type="text/javascript" src='js/sliders.js'></script>
+<link href='{% static 'css/base.css' %}' rel="stylesheet">
+<link href='{% static 'css/index.css' %}' rel="stylesheet">
+<script type="text/javascript" src='{% static 'js/jquery.min.js' %}'></script>
+<script type="text/javascript" src='{% static 'js/sliders.js' %}'></script>
 <!--[if lt IE 9]>
-<script src="js/modernizr.js"></script>
+<script src='{% static 'js/modernizr.js'%}'></script>
 <![endif]-->
 </head>
 <body>

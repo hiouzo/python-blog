@@ -23,9 +23,9 @@ urlpatterns = [
     url(r"^uploads/(?P<path>.*)$", \
         "django.views.static.serve", \
         {"document_root": settings.MEDIA_ROOT,}),
-    url(r'^admin/', include(admin.site.urls)),
+    url(r'^admin/$', include(admin.site.urls)),
     url(r'^$', index, name='index'),
-    url(r'^login/', login, name='login'),
-    url(r'^failure/', failure, name = 'failure'),
-    url(r'^article/', article, name = 'article'),
+    url(r'^login/$', login, name='login'),
+    url(r'^failure/$', failure, name = 'failure'),
+    url(r'^article/$', article, name = 'article'),
 ]

@@ -58,7 +58,7 @@ ROOT_URLCONF = 'newblog.urls'
 
 TEMPLATES = [
     {
-        'BACKEND': 'django.template.backends.django.DjangoTemplates',
+        'BACKEND': 'django.template.backEnds.django.DjangoTemplates',
         'DIRS': [os.path.join(BASE_DIR, 'templates')]
         ,
         'APP_DIRS': True,
@@ -91,7 +91,7 @@ DATABASES = {
 # Internationalization
 # https://docs.djangoproject.com/en/1.8/topics/i18n/
 
-#改变后台语言设置,默认为us-EN
+# 改变后台语言设置,默认为us-EN
 LANGUAGE_CODE = 'zh-CN'
 
 TIME_ZONE = 'UTC'
@@ -114,11 +114,10 @@ STATICFILES_DIRS = (os.path.join(BASE_DIR, 'static'),)
 MEDIA_URL = '/uploads/'
 MEDIA_ROOT = os.path.join(BASE_DIR,'uploads')
 
-#自定义用户model
+# 自定义用户model
 AUTH_USER_MODEL = 'blogs.User'
 
-
-#网站基本信息配置
+# 网站基本信息配置
 SITE_NAME ='ouzo的博客'
 SITE_BESC ='个人博客'
 PRO_RSS = ''

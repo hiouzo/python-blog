@@ -98,6 +98,7 @@ class Comment(models.Model):
 	def __unicode__(self):
 		return str(self.id)
 
+
 # 友情链接
 class Links(models.Model):
 	title = models.CharField(max_length=50, verbose_name='标题')

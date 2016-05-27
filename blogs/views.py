@@ -2,7 +2,8 @@
 import logging
 from django.shortcuts import render
 from django.conf import settings
-from django.http import HttpResponse
+
+# from django.http import HttpResponse
 
 logger = logging.getLogger('blogs.views')
 # Create your views here.
@@ -11,7 +12,7 @@ logger = logging.getLogger('blogs.views')
 def global_setting(request):
     return {'SITE_NAME': settings.SITE_NAME,
             'SITE_BESC': settings.SITE_BESC,
-            'PRO_EMAIL': settings.PRO_EMAIL,}
+            'PRO_EMAIL': settings.PRO_EMAIL}
 
 
 def index(request):

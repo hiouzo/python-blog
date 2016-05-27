@@ -31,5 +31,3 @@ urlpatterns = [
     url(r'^failure/$', failure, name='failure'),
     url(r'^article/$', article, name='article'),
 ]
-
-print help(admin)

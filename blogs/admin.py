@@ -56,13 +56,14 @@ class UserProfileAdmin(UserAdmin):
     filter_horizontal = ('groups', 'user_permissions',)
 
 
-#
+"""
 # 为什么要定义UserProfileAdmin, 数据库在添加用户密码的时候由于我们在Setting自定义了user的model(111行)
 # #自定义用户model
 # AUTH_USER_MODEL = 'blogs.User'
 # 所以我们的密码在新建的时候是明文密码, 没有经过django的用户类处理过, 所以我们为了对密码或者一些信息加密
 # 要把admin的类引用回来
-#
+"""
+
 
 
 

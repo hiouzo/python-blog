@@ -1,59 +1,59 @@
 # -*- coding: utf-8 -*-
 from django.contrib import admin
 from models import *
-from django.contrib.auth.admin import UserAdmin								#引用admin的类
-from django.utils.translation import ugettext, ugettext_lazy as _			#继承原有admin中对用户管理类引用
+from django.contrib.auth.admin import UserAdmin  # 引用admin的类
+from django.utils.translation import ugettext, ugettext_lazy as _  # 继承原有admin中对用户管理类引用
 
 
 # Register your models here.
 
 class ArticleAdmin(admin.ModelAdmin):
-	#list_display 是列参数的配置, 列表参数配置
-	list_display = ('title','user','date_publish','is_recommend')
+    # list_display 是列参数的配置, 列表参数配置
+    list_display = ('title', 'user', 'date_publish', 'is_recommend')
 
-	# #页面内容需要显示的参数.exclude 是不显示的参数列举
-	# fields = ('title','desc','content','user')
-	#fieldsets 是管理集合, 一部分信息显示在一个主要区域, 另外一部分信息隐藏在扩展里
-	fieldsets = (
-		(None, {
-			'fields': ('title', 'desc', 'content', 'user')
-		}),
-		#扩展要显示的参数
-		('more', {
-			'classes': ('collapse',),
-			'fields': ('tag', 'category', 'is_recommend')
-		}),
-	)
+    # #页面内容需要显示的参数.exclude 是不显示的参数列举
+    # fields = ('title','desc','content','user')
+    # fieldsets 是管理集合, 一部分信息显示在一个主要区域, 另外一部分信息隐藏在扩展里
+    fieldsets = (
+        (None, {
+            'fields': ('title', 'desc', 'content', 'user')
+        }),
+        # 扩展要显示的参数
+        ('more', {
+            'classes': ('collapse',),
+            'fields': ('tag', 'category', 'is_recommend')
+        }),
+    )
 
-	#引入富文本媒体编辑器
-	class Media:
-		js = (
-			'/static/js/kindeditor-4.1.10/kindeditor-min.js',
-			'/static/js/kindeditor-4.1.10/lang/zh_CN.js',
-			'/static/js/kindeditor-4.1.10/config.js',
-		)
+    # 引入富文本媒体编辑器
+    class Media:
+        js = (
+            '/static/js/kindeditor-4.1.10/kindeditor-min.js',
+            '/static/js/kindeditor-4.1.10/lang/zh_CN.js',
+            '/static/js/kindeditor-4.1.10/config.js',
+        )
 
 
-#继承原有admin中对用户管理类
+# 继承原有admin中对用户管理类
 class UserProfileAdmin(UserAdmin):
-	fieldsets = (
-		(None, {'fields': ('username', 'password')}),
-		(_('Personal info'), {'fields': ('email', 'qq', 'mobile')}),
-		(_('Permissions'), {'fields': ('is_active', 'is_staff', 'is_superuser','groups', 'user_permissions')}),
-		(_('Important dates'), {'fields': ('last_login', 'date_joined')}),
-	)
-	add_fieldsets = (
-		(None, {
-			'classes': ('wide',),
-			'fields': ('username', 'password1', 'password2'),
-		}),
-	)
+    fieldsets = (
+        (None, {'fields': ('username', 'password')}),
+        (_('Personal info'), {'fields': ('email', 'qq', 'mobile')}),
+        (_('Permissions'), {'fields': ('is_active', 'is_staff', 'is_superuser', 'groups', 'user_permissions')}),
+        (_('Important dates'), {'fields': ('last_login', 'date_joined')}),
+    )
+    add_fieldsets = (
+        (None, {
+            'classes': ('wide',),
+            'fields': ('username', 'password1', 'password2'),
+        }),
+    )
 
-	list_display = ('email', 'is_staff')
-	list_filter = ('is_staff', 'is_superuser', 'is_active', 'groups')
-	search_fields = ('email',)
-	ordering = ('email',)
-	filter_horizontal = ('groups', 'user_permissions',)
+    list_display = ('email', 'is_staff')
+    list_filter = ('is_staff', 'is_superuser', 'is_active', 'groups')
+    search_fields = ('email',)
+    ordering = ('email',)
+    filter_horizontal = ('groups', 'user_permissions',)
 
 
 #
@@ -67,12 +67,10 @@ class UserProfileAdmin(UserAdmin):
 
 
 
-admin.site.register(User, UserProfileAdmin)			#定义UserProfileAdmin,对密码以及注册用户参数进行控制
+admin.site.register(User, UserProfileAdmin)  # 定义UserProfileAdmin,对密码以及注册用户参数进行控制
 admin.site.register(Tag)
 admin.site.register(Category)
-admin.site.register(Article, ArticleAdmin)			#发布文章需要填写的参数扩展
+admin.site.register(Article, ArticleAdmin)  # 发布文章需要填写的参数扩展
 admin.site.register(Comment)
 admin.site.register(Links)
 admin.site.register(Ad)
-
-

@@ -67,10 +67,12 @@ class UserProfileAdmin(UserAdmin):
 
 
 
-admin.site.register(User, UserProfileAdmin)  # 定义UserProfileAdmin,对密码以及注册用户参数进行控制
+# 定义UserProfileAdmin,对密码以及注册用户参数进行控制
+admin.site.register(User, UserProfileAdmin)
 admin.site.register(Tag)
 admin.site.register(Category)
-admin.site.register(Article, ArticleAdmin)  # 发布文章需要填写的参数扩展
+# 发布文章需要填写的参数扩展
+admin.site.register(Article, ArticleAdmin)
 admin.site.register(Comment)
 admin.site.register(Links)
 admin.site.register(Ad)

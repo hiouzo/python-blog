@@ -11,7 +11,8 @@ from django.contrib.auth.models import AbstractUser
 class User(AbstractUser):
     avatar = models.ImageField(upload_to='avatar/%Y/%m', default='avatar/default.png', max_length=200, blank=True,
                                null=True, verbose_name='用户头像')
-    qq = models.CharField(max_length=20, blank=True, null=True, verbose_name='QQ号码')  #blank表单可以为空， null字段参数可以为空
+    # blank表单可以为空， null字段参数可以为空
+    qq = models.CharField(max_length=20, blank=True, null=True, verbose_name='QQ号码')
     mobile = models.CharField(max_length=11, blank=True, null=True, unique=True, verbose_name='手机号码')
     url = models.URLField(max_length=100, blank=True, null=True, verbose_name='个人网页地址')
 

@@ -22,9 +22,9 @@ from blogs.views import *
 # 配置URLS 页面路径
 urlpatterns = [
     # 配置上传文件夹目录
-    url(r"^uploads/(?P<path>.*)$", \
-        "django.views.static.serve", \
-        {"document_root": settings.MEDIA_ROOT,}),
+    # url(r"^uploads/(?P<path>.*)$", \
+    #     "django.views.static.serve", \
+    #     {"document_root": settings.MEDIA_ROOT, }),
     url(r'^admin/', include(admin.site.urls)),
     url(r'^$', index, name='index'),
     url(r'^login/$', login, name='login'),

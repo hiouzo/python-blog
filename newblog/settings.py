@@ -49,6 +49,7 @@ MIDDLEWARE_CLASSES = (
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
     'django.middleware.security.SecurityMiddleware',
+    'django.middleware.locale.LocaleMiddleware', #后台中文语言配置
 )
 
 ROOT_URLCONF = 'newblog.urls'
@@ -85,8 +86,8 @@ DATABASES = {
 # Internationalization
 # https://docs.djangoproject.com/en/1.8/topics/i18n/
 
-# 改变后台语言设置,默认为us-EN
-LANGUAGE_CODE = 'zh-CN'
+# 改变后台语言设置,默认为us-
+LANGUAGE_CODE = 'en-us'
 
 TIME_ZONE = 'UTC'
 

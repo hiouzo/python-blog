@@ -11,6 +11,7 @@ logger = logging.getLogger('blogs.views')
 # Create your views here.
 
 
+#配置站点信息,站点名字、描述、邮箱
 def global_setting(request):
     return {'SITE_NAME': settings.SITE_NAME,
             'SITE_BESC': settings.SITE_BESC,

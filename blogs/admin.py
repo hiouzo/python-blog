@@ -8,6 +8,7 @@ from django.utils.translation import ugettext, ugettext_lazy as _  # 继承原�
 # Register your models here.
 
 class ArticleAdmin(admin.ModelAdmin):
+
     # list_display 是列参数的配置, 列表参数配置
     list_display = ('title', 'user', 'date_publish', 'is_recommend')
 

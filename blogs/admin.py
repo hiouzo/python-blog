@@ -39,7 +39,7 @@ class ArticleAdmin(admin.ModelAdmin):
 class UserProfileAdmin(UserAdmin):
     fieldsets = (
         (None, {'fields': ('username', 'password')}),
-        (_('Personal info'), {'fields': ('email', 'qq', 'mobile')}),
+        (_('Personal info'), {'fields': ('email', 'qq', 'mobile','avatar')}),
         (_('Permissions'), {'fields': ('is_active', 'is_staff', 'is_superuser', 'groups', 'user_permissions')}),
         (_('Important dates'), {'fields': ('last_login', 'date_joined')}),
     )

@@ -119,7 +119,6 @@ PRO_RSS = ''
 PRO_EMAIL = 'ouzo@hiouzo.cn'
 
 # 自定义日志输出信息
-
 # LOGGING = {
 #     'version': 1,
 #     'disable_existing_loggers': True,

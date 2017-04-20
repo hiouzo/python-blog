@@ -25,11 +25,7 @@ urlpatterns = [
     # url(r'^admin/', admin.site.urls),
     url(r'^uploads/(?P<path>.*)$',
         static.serve,
-        {'document_root':settings.MEDIA_ROOT}),
+        {'document_root': settings.MEDIA_ROOT}),
     url(r'^admin/upload/(?P<dir_name>[^/]+)$', upload_image, name='upload_image'),
     url(r'^$', index, name='index'),
-    url(r'^login/$', login, name='login'),
-    url(r'^faiure/$', failure, name='success'),
-    url(r'^article/$', article, name='article'),
-
 ]

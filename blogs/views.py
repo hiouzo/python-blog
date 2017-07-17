@@ -1,7 +1,11 @@
 # -*- coding: utf-8 -*-
+import json
 import logging
+
+from django.http.response import JsonResponse
 from django.shortcuts import render
 from django.conf import settings
+from django.core.paginator import Paginator,InvalidPage,EmptyPage,PageNotAnInteger
 # from django.http import HttpResponse
 from models import *
 
@@ -23,6 +27,16 @@ def index(request):
     #     logger.error(e)
     # return render(request, 'index.html', locals())
 
-    # 定义一个category_list, 读取models里Category分类表里所有数据,截取5个
-    category_list = Category.objects.all()[:5]
+    # 导航数据, 读取models里Category分类表里所有数据,截取5个
+    category_list = Category.objects.all().values()[:5]
     return render(request, 'index.html', {'category_list': category_list})
+    # 广告数据
+    # 最新文章数据
+    article_list = Article.objects.all()
+    paginator = Paginator(article_list,10)
+    # try:
+    #     page = int(request.GET('page,1'))
+    #     article_list = paginator.page(page)
+    # except(EmptyPage,InvalidPage,PageNotAnInteger)
+    #     pass
+

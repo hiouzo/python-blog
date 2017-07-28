@@ -65,10 +65,6 @@ class UserProfileAdmin(UserAdmin):
 # 要把admin的类引用回来
 """
 
-
-
-
-
 # 定义UserProfileAdmin,对密码以及注册用户参数进行控制
 admin.site.register(User, UserProfileAdmin)
 admin.site.register(Tag)

@@ -19,6 +19,7 @@ def global_setting(request):
             'SITE_BESC': settings.SITE_BESC,
             'PRO_EMAIL': settings.PRO_EMAIL}
 
+
 def index(request):
     # 测试日志例子, 找不到sss.txt文件的时候 在log文件夹的error.log里会发现多一个错误
     # try:
@@ -32,6 +33,7 @@ def index(request):
     return render(request, 'index.html', {'category_list': category_list})
     # 广告数据
     # 最新文章数据
+
     article_list = Article.objects.all()
     paginator = Paginator(article_list,10)
     # try:

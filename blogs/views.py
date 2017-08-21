@@ -32,8 +32,7 @@ def index(request):
     category_list = Category.objects.all().values()[:5]
     return render(request, 'index.html', {'category_list': category_list})
     # 广告数据
-    # 最新文章数据
-
+    #  最新文章数据
     article_list = Article.objects.all()
     paginator = Paginator(article_list,10)
     # try:

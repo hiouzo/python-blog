@@ -1,17 +1,15 @@
 # -*- coding: utf-8 -*-
-import json
 import logging
 
-from django.http.response import JsonResponse
-from django.shortcuts import render
 from django.conf import settings
-from django.core.paginator import Paginator,InvalidPage,EmptyPage,PageNotAnInteger
+from django.core.paginator import Paginator, InvalidPage, EmptyPage, PageNotAnInteger
+from django.shortcuts import render
+
 # from django.http import HttpResponse
-from models import *
+from blogs.models import Article, Category
 
 logger = logging.getLogger('blogs.views')
 
-# Create your views here.
 
 # 配置站点信息,站点名字、描述、邮箱
 def global_setting(request):
@@ -27,17 +25,26 @@ def index(request):
     # except Exception as e:
     #     logger.error(e)
     # return render(request, 'index.html', locals())
-
-    # 导航数据, 读取models里Category分类表里所有数据,截取5个
-    category_list = Category.objects.all().values()[:5]
-    return render(request, 'index.html', {'category_list': category_list})
+ 
     # 广告数据
     #  最新文章数据
     article_list = Article.objects.all()
-    paginator = Paginator(article_list,10)
-    # try:
-    #     page = int(request.GET('page,1'))
-    #     article_list = paginator.page(page)
-    # except(EmptyPage,InvalidPage,PageNotAnInteger)
-    #     pass
+    paginator = Paginator(article_list,3)
+    try:
+        # 通过requests对象获取当前页的数据, 如果没找到这个对象返回1
+        page = int(request.GET.get('page',1))
+        article_list = paginator.page(page)
+        # 异常捕获
+    except(EmptyPage,InvalidPage,PageNotAnInteger):
+        article_list = paginator.page(1)
+
+    # 导航数据, 读取models里Category分类表里所有数据,截取5个
+    category_list = Category.objects.all().values()[:5]
+    return render(request, 'index.html', locals())
+
+# 文章归档
+# 1. 先获取文章中的年月信息
+# print Article.objects.values('date_publish_').distinct()
+
+
 

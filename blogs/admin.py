@@ -1,11 +1,12 @@
 # -*- coding: utf-8 -*-
 from django.contrib import admin
-from models import *
 from django.contrib.auth.admin import UserAdmin  # 引用admin的类
 from django.utils.translation import ugettext, ugettext_lazy as _  # 继承原有admin中对用户管理类引用
 
 
 # Register your models here.
+from blogs.models import *
+
 
 class ArticleAdmin(admin.ModelAdmin):
 
@@ -50,7 +51,7 @@ class UserProfileAdmin(UserAdmin):
         }),
     )
 
-    list_display = ('email', 'is_staff')
+    list_display = ('email', 'is_staff','is_superuser')
     list_filter = ('is_staff', 'is_superuser', 'is_active', 'groups')
     search_fields = ('email',)
     ordering = ('email',)

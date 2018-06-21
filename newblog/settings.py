@@ -14,6 +14,7 @@ https://docs.djangoproject.com/en/1.8/ref/settings/
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
 import os
 
+
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 
 # Quick-start development settings - unsuitable for production
@@ -39,6 +40,7 @@ INSTALLED_APPS = (
     'blogs',
 
 )
+
 
 MIDDLEWARE_CLASSES = (
     'django.contrib.sessions.middleware.SessionMiddleware',
@@ -117,6 +119,8 @@ SITE_NAME = 'ouzo的博客'
 SITE_BESC = '个人博客'
 PRO_RSS = ''
 PRO_EMAIL = 'ouzo@hiouzo.cn'
+
+
 
 # 自定义日志输出信息
 # LOGGING = {

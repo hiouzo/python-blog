@@ -1,4 +1,3 @@
-# coding:utf-8
 """newblog URL Configuration
 
 The `urlpatterns` list routes URLs to views. For more information please see:
@@ -28,4 +27,5 @@ urlpatterns = [
         {'document_root': settings.MEDIA_ROOT}),
     url(r'^admin/upload/(?P<dir_name>[^/]+)$', upload_image, name='upload_image'),
     url(r'^$', index, name='index'),
+
 ]

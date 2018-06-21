@@ -1,6 +1,4 @@
-# -*- coding: utf-8 -*-
 import logging
-
 from django.conf import settings
 from django.core.paginator import Paginator, InvalidPage, EmptyPage, PageNotAnInteger
 from django.shortcuts import render
@@ -13,9 +11,11 @@ logger = logging.getLogger('blogs.views')
 
 # 配置站点信息,站点名字、描述、邮箱
 def global_setting(request):
-    return {'SITE_NAME': settings.SITE_NAME,
+    return {
+        'SITE_NAME': settings.SITE_NAME,
             'SITE_BESC': settings.SITE_BESC,
-            'PRO_EMAIL': settings.PRO_EMAIL}
+            'PRO_EMAIL': settings.PRO_EMAIL,
+    }
 
 
 def index(request):
